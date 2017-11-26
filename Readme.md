@@ -23,4 +23,5 @@ then run:
 
 ```git clone https://github.com/theMladyPan/PIMP
 git clone https://github.com/theMladyPan/pointgrey_py_test
-python test.py```
+python test.py
+```
