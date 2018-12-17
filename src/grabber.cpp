@@ -60,7 +60,13 @@ void Grabber::init(AcquisitionModeEnums modeEnum)
 }
 
 void Grabber::acquire(){
+  // TODO: rewrite for single shot
   pCam->BeginAcquisition();
+}
+
+void Grabber::stop()
+{
+  pCam->EndAcquisition();
 }
 
 string Grabber::getSerialNr(){
@@ -81,7 +87,7 @@ ImagePtr Grabber::getResult()
 {
   // size_t width = pResultImage->GetWidth();
   // size_t height = pResultImage->GetHeight();
-  lastResult = pCam->GetNextImage()->Convert(PixelFormat_Mono8, HQ_LINEAR);
+  lastResult = pCam->GetNextImage();//->Convert(PixelFormat_Mono8, HQ_LINEAR);
   return lastResult;
 }
 
@@ -92,6 +98,15 @@ ImagePtr Grabber::getLastResult()
     }
   else{
       return getResult();
+    }
+}
+
+void Grabber::saveLast(string filename)
+{
+  if(lastResult != NULL){
+      lastResult->Save(filename.c_str());
+    }else{
+      this->getResult()->Save(filename.c_str());
     }
 }
 
