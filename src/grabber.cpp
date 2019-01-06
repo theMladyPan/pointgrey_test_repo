@@ -59,7 +59,7 @@ void Grabber::init(AcquisitionModeEnums modeEnum)
   ptrAcquisitionMode->SetIntValue(acquisitionMode);
 }
 
-void Grabber::acquire(){
+void Grabber::start(){
   // TODO: rewrite for single shot
   pCam->BeginAcquisition();
 }

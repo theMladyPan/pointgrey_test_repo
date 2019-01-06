@@ -38,6 +38,7 @@ set( project_sources
    main.cpp
    src/grabber.cpp
    src/ocv_spinnaker.cpp
+   src/imfilib.cpp
 )
 
 add_executable(${PROJECT_NAME} ${project_sources})

@@ -20,8 +20,12 @@ private:
     Mat mat;
 public:
   oCV_spinnaker(ImagePtr image);
+  oCV_spinnaker();
   Mat getMat();
+  void setMat(Mat inputMat);
+  void setMatFromCamera(ImagePtr image);
   void showMat();
+  void showMat(Mat matToShow);
 };
 
 #endif // OCV_SPINNAKER_H

@@ -40,7 +40,7 @@ public:
   void init(AcquisitionModeEnums modeEnum);
 
   /// Acquire image
-  void acquire();
+  void start();
 
   /// Stop acquisition
   void stop();
